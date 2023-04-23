@@ -11,6 +11,6 @@ export default async function handler(
 ) {
   console.log('contacting external API...');
   let response: Response = await fetch('http://127.0.0.1:8080/');
-  let data = await response.json();
-  res.status(200).json({ name: data.toString() });
+  let data = await response.text();
+  res.status(200).json({ name: data });
 }
